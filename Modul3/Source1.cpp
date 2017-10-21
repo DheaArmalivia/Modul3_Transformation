@@ -5,20 +5,23 @@
 void kotak()
 {
 	//[a]
-	glTranslatef(200, -100, 0);
+	//glTranslatef(200, -100, 0);
 	glBegin(GL_QUADS);
 	//[b]
+	//glTranslatef(200, -100, 0);
 	glScalef(1, 0.25, 0);
 	glColor3f(1, 1, 1);
 	glVertex2f(100, 100);
 	glVertex2f(100, -100);
 	//[c]
+	//glTranslatef(200, -100, 0);
 	glVertex2f(-100, -100);
 	glVertex2f(-100, 100);
 	//[d]
 	//glTranslatef(200, -100, 0);
 	glEnd();
 	//[e]
+	glTranslatef(200, -100, 0);
 }
 
 void render()
