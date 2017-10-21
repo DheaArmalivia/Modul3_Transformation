@@ -121,48 +121,105 @@
 //	return 0;
 //}
 
-void kotak1()
+//void kotak1()
+//{
+//	glBegin(GL_QUADS);
+//	glColor3f(1, 0, 0);
+//	glVertex2f(50, 0);
+//	glVertex2f(-150, 200);
+//	glVertex2f(-350, 0);
+//	glVertex2f(-150, -200);
+//	glEnd();
+//}
+//void kotak2()
+//{
+//	glScalef(0.5, 0.5, 0);
+//	glTranslatef(450, 0, 0);
+//	glBegin(GL_QUADS);
+//	glColor3f(0, 1, 0);
+//	glVertex2f(50, 0);
+//	glVertex2f(-150, 200);
+//	glVertex2f(-350, 0);
+//	glVertex2f(-150, -200);
+//	glEnd();
+//}
+//void kotak3()
+//{
+//	glScalef(0.5, 0.5, 0);
+//	glTranslatef(450, 0, 0);
+//	glBegin(GL_QUADS);
+//	glColor3f(0, 0, 1);
+//	glVertex2f(50, 0);
+//	glVertex2f(-150, 200);
+//	glVertex2f(-350, 0);
+//	glVertex2f(-150, -200);
+//	glEnd();
+//}
+//void render()
+//{
+//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//	kotak1();
+//	glPushMatrix();
+//	kotak2();
+//	kotak3();
+//	glPopMatrix();
+//	glutSwapBuffers();
+//}
+//int main(int argc, char* argv[])
+//{
+//	glutInit(&argc, argv);
+//	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+//	glutInitWindowSize(800, 600);
+//	glutCreateWindow("XII RPL 4-06-Dhea Armalivia Airizah");
+//	gluOrtho2D(-400, 400, -300, 300);
+//	glClearColor(0, 0, 0, 0);
+//	glutDisplayFunc(render);
+//	glutMainLoop();
+//	return 0;
+//}
+
+void ta1()
 {
-	glBegin(GL_QUADS);
+	glTranslatef(-100, 0, 0);
+	glBegin(GL_TRIANGLES);
+	glLineWidth(50);
 	glColor3f(1, 0, 0);
-	glVertex2f(50, 0);
-	glVertex2f(-150, 200);
-	glVertex2f(-350, 0);
-	glVertex2f(-150, -200);
+	glVertex2f(200, 0);
+	glVertex2f(300, 200);
+	glVertex2f(400, 0);
 	glEnd();
-}
-void kotak2()
-{
-	glScalef(0.5, 0.5, 0);
-	glTranslatef(450, 0, 0);
-	glBegin(GL_QUADS);
-	glColor3f(0, 1, 0);
-	glVertex2f(50, 0);
-	glVertex2f(-150, 200);
-	glVertex2f(-350, 0);
-	glVertex2f(-150, -200);
-	glEnd();
-}
-void kotak3()
-{
-	glScalef(0.5, 0.5, 0);
-	glTranslatef(450, 0, 0);
-	glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLES);
+	glLineWidth(50);
 	glColor3f(0, 0, 1);
-	glVertex2f(50, 0);
-	glVertex2f(-150, 200);
-	glVertex2f(-350, 0);
-	glVertex2f(-150, -200);
+	glVertex2f(200, 0);
+	glVertex2f(300, -200);
+	glVertex2f(400, 0);
+	glEnd();
+}
+void ta2()
+{
+	glRotatef(180, 0, 0, 0);
+	glTranslatef(-200, 0, 0);
+	glBegin(GL_TRIANGLES);
+	glLineWidth(50);
+	glColor3f(1, 0, 0);
+	glVertex2f(0, 0);
+	glVertex2f(100, 200);
+	glVertex2f(200, 0);
+	glEnd();
+	glBegin(GL_TRIANGLES);
+	glLineWidth(50);
+	glColor3f(0, 0, 1);
+	glVertex2f(0, 0);
+	glVertex2f(100, -200);
+	glVertex2f(200, 0);
 	glEnd();
 }
 void render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	kotak1();
-	glPushMatrix();
-	kotak2();
-	kotak3();
-	glPopMatrix();
+	ta1();
+	ta2();
 	glutSwapBuffers();
 }
 int main(int argc, char* argv[])
