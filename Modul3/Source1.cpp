@@ -178,50 +178,163 @@
 //	return 0;
 //}
 
-void ta1()
+//void ta1()
+//{
+//	glTranslatef(-100, 0, 0);
+//	glBegin(GL_TRIANGLES);
+//	glLineWidth(50);
+//	glColor3f(1, 0, 0);
+//	glVertex2f(200, 0);
+//	glVertex2f(300, 200);
+//	glVertex2f(400, 0);
+//	glEnd();
+//	glBegin(GL_TRIANGLES);
+//	glLineWidth(50);
+//	glColor3f(0, 0, 1);
+//	glVertex2f(200, 0);
+//	glVertex2f(300, -200);
+//	glVertex2f(400, 0);
+//	glEnd();
+//}
+//void ta2()
+//{
+//	glRotatef(180, 0, 0, 0);
+//	glTranslatef(-200, 0, 0);
+//	glBegin(GL_TRIANGLES);
+//	glLineWidth(50);
+//	glColor3f(1, 0, 0);
+//	glVertex2f(0, 0);
+//	glVertex2f(100, 200);
+//	glVertex2f(200, 0);
+//	glEnd();
+//	glBegin(GL_TRIANGLES);
+//	glLineWidth(50);
+//	glColor3f(0, 0, 1);
+//	glVertex2f(0, 0);
+//	glVertex2f(100, -200);
+//	glVertex2f(200, 0);
+//	glEnd();
+//}
+//void render()
+//{
+//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//	ta1();
+//	ta2();
+//	glutSwapBuffers();
+//}
+
+void nose()
 {
-	glTranslatef(-100, 0, 0);
-	glBegin(GL_TRIANGLES);
+	glBegin(GL_POLYGON);
 	glLineWidth(50);
 	glColor3f(1, 0, 0);
-	glVertex2f(200, 0);
-	glVertex2f(300, 200);
-	glVertex2f(400, 0);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, 50);
+	glVertex2f(100, 50);
+	glVertex2f(100, 0);
 	glEnd();
-	glBegin(GL_TRIANGLES);
+	glBegin(GL_POLYGON);
 	glLineWidth(50);
 	glColor3f(0, 0, 1);
-	glVertex2f(200, 0);
-	glVertex2f(300, -200);
-	glVertex2f(400, 0);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, -50);
+	glVertex2f(100, -50);
+	glVertex2f(100, 0);
 	glEnd();
 }
-void ta2()
+void eyerg()
 {
-	glRotatef(180, 0, 0, 0);
-	glTranslatef(-200, 0, 0);
-	glBegin(GL_TRIANGLES);
+	glTranslatef(250, 200, 0);
+	glRotatef(90, 0, 0, 1);
+	glScalef(0.5, 1, 1);
+	glBegin(GL_POLYGON);
 	glLineWidth(50);
 	glColor3f(1, 0, 0);
-	glVertex2f(0, 0);
-	glVertex2f(100, 200);
-	glVertex2f(200, 0);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, 50);
+	glVertex2f(100, 50);
+	glVertex2f(100, 0);
 	glEnd();
-	glBegin(GL_TRIANGLES);
+	glBegin(GL_POLYGON);
 	glLineWidth(50);
 	glColor3f(0, 0, 1);
-	glVertex2f(0, 0);
-	glVertex2f(100, -200);
-	glVertex2f(200, 0);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, -50);
+	glVertex2f(100, -50);
+	glVertex2f(100, 0);
 	glEnd();
+}
+void eyelf()
+{
+	glTranslatef(-250, 200, 0);
+	glRotatef(-90, 0, 0, 1);
+	glScalef(0.5, 1, 1);
+	glBegin(GL_POLYGON);
+	glLineWidth(50);
+	glColor3f(1, 0, 0);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, 50);
+	glVertex2f(100, 50);
+	glVertex2f(100, 0);
+	glEnd();
+	glBegin(GL_POLYGON);
+	glLineWidth(50);
+	glColor3f(0, 0, 1);
+	glVertex2f(-100, 0);
+	glVertex2f(-100, -50);
+	glVertex2f(100, -50);
+	glVertex2f(100, 0);
+	glEnd();
+}
+void mouth()
+{
+	glBegin(GL_POLYGON);
+	glLineWidth(50);
+	glColor3f(1, 0, 0);
+	glVertex2f(-200, -150);
+	glVertex2f(-200, -200);
+	glVertex2f(200, -200);
+	glVertex2f(200, -150);
+	glEnd();
+	glPushMatrix();
+	glScalef(0.25, 1, 1);
+	glTranslatef(-400, -50, 0);
+	glBegin(GL_POLYGON);
+	glLineWidth(50);
+	glColor3f(0, 0, 1);
+	glVertex2f(-200, -150);
+	glVertex2f(-200, -200);
+	glVertex2f(200, -200);
+	glVertex2f(200, -150);
+	glEnd();
+	glPopMatrix();
+	glPushMatrix();
+	glScalef(0.25, 1, 1);
+	glTranslatef(400, -50, 0);
+	glBegin(GL_POLYGON);
+	glLineWidth(50);
+	glColor3f(0, 0, 1);
+	glVertex2f(-200, -150);
+	glVertex2f(-200, -200);
+	glVertex2f(200, -200);
+	glVertex2f(200, -150);
+	glEnd();
+	glPopMatrix();
 }
 void render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	ta1();
-	ta2();
+	nose();
+	glPushMatrix();
+	eyelf();
+	glPopMatrix();
+	glPushMatrix();
+	eyerg();
+	glPopMatrix();
+	mouth();
 	glutSwapBuffers();
 }
+
 int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
