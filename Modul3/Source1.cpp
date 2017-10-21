@@ -7,11 +7,13 @@ void kotak()
 	//[a]
 	//glTranslatef(200, -100, 0);
 	//glRotatef(45, 1, 0, 0);
+	//glScalef(2, 0.5, 0);
 
 	glBegin(GL_QUADS);
 	//[b]
 	//glTranslatef(200, -100, 0);
 	//glRotatef(45, 1, 0, 0);
+	//glScalef(2, 0.5, 0);
 
 	glColor3f(1, 1, 1);
 	glVertex2f(100, 100);
@@ -20,6 +22,7 @@ void kotak()
 	//[c]
 	//glTranslatef(200, -100, 0);
 	//glRotatef(45, 1, 0, 0);
+	//glScalef(2, 0.5, 0);
 
 	glVertex2f(-100, -100);
 	glVertex2f(-100, 100);
@@ -27,11 +30,13 @@ void kotak()
 	//[d]
 	//glTranslatef(200, -100, 0);
 	//glRotatef(45, 1, 0, 0);
+	//glScalef(2, 0.5, 0);
 
 	glEnd();
 	//[e]
 	//glTranslatef(200, -100, 0);
 	//glRotatef(45, 1, 0, 0);
+	//glScalef(2, 0.5, 0);
 
 }
 
